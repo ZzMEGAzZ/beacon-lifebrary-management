@@ -9,10 +9,11 @@ export default function Home() {
 
     return (
         <>
-            <Toaster position="top-center" reverseOrder={false} />
-            <div>
-                hi
-            </div>
+            <Middle X Y className="w-full h-full p-4 bg-white">
+                <h1 className="text-black">Home</h1>
+                <Button onClick={() => toast.success('Hello, world!')}>Click me</Button>
+                <Toaster />
+            </Middle>
         </>
     );
 }
