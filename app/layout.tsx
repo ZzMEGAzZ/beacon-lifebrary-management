@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 import TailFooter from '@/components/objects/footer/TailFooter';
+import SideNav from '@/components/objects/sideNavigation/sideNavigation';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,8 +22,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </head>
             <body className={inter.className}>
                 <header></header>
-                <main className={`w-screen h-[95dvh]`}>{children}</main>
-                <footer className='h-[5dvh]'>
+
+                <main className={`w-screen h-[95dvh] bg-white text-black`}>
+                    <div className='h-full w-full sm:w-[350px]'>
+                        <SideNav />
+                    </div>
+                    {children}
+                </main>
+                <footer className="h-[5dvh]">
                     <TailFooter />
                 </footer>
             </body>

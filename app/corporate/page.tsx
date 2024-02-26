@@ -1,9 +1,11 @@
-import React from "react";
+import Middle from "@/components/layouts/Middle";
 
-export default function Home() {
+export default function Corporate() {
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <>
+            <Middle X Y className="w-full h-full p-4 bg-white">
+                <h1 className="text-white">Corporate</h1>
+            </Middle>
+        </>
     );
 }

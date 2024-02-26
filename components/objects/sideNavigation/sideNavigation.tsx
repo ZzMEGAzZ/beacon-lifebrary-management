@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -30,16 +31,25 @@ export default function SideNav() {
                 </div>
                 <div className="flex flex-col items-center justify-center h-full">
                     <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
-                        <h1 className="text-lg font-bold">Dashboard</h1>
+                        <a href="/bubble" className="text-lg font-bold">
+                            Bubble
+                        </a>
                     </div>
                     <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
-                        <h1 className="text-lg font-bold">Books</h1>
+                        <a href="/setup-event" className="text-lg font-bold">
+                            Setup Event
+                        </a>
                     </div>
                     <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
-                        <h1 className="text-lg font-bold">Members</h1>
+                        <a href="/settings-beacon" className="text-lg font-bold">
+                            Settings Beacon
+                        </a>
                     </div>
+
                     <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
-                        <h1 className="text-lg font-bold">Librarians</h1>
+                        <a href="/corporate" className="text-lg font-bold">
+                            Corporate
+                        </a>
                     </div>
                     <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
                         <h1 className="text-lg font-bold">Settings</h1>
