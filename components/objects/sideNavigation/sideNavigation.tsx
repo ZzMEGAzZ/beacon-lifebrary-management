@@ -1,10 +1,9 @@
 'use client';
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function SideNav() {
     const [isOpen, setIsOpen] = useState<number>(350);
-    const windowSize = window.innerWidth;
 
     return (
         <>
@@ -21,8 +20,8 @@ export default function SideNav() {
                 </motion.div>
             )}
             <motion.div
-                initial={{ x: windowSize > 576 ? -576 : -windowSize }}
-                animate={{ x: isOpen ? 0 : windowSize > 576 ? -576 : -windowSize }}
+                initial={{ x: isOpen ? -700 : 0 }}
+                animate={{ x: isOpen ? 0 : -700 }}
                 transition={{ duration: 0.5 }}
                 className="h-full w-full sm:w-[350px] bg-gray-800 text-white"
             >

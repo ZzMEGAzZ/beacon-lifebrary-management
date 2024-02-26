@@ -22,7 +22,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </head>
             <body className={inter.className}>
                 <header></header>
-
                 <main className={`w-screen h-[95dvh] bg-white text-black`}>
                     <div className='h-full w-full sm:w-[350px]'>
                         <SideNav />
