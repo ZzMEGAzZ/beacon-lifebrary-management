@@ -10,6 +10,9 @@ export default function Home() {
     return (
         <>
             <Toaster position="top-center" reverseOrder={false} />
+            <div>
+                hi
+            </div>
         </>
     );
 }
