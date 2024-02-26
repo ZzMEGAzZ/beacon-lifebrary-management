@@ -30,23 +30,18 @@ export default function SideNav() {
                 </div>
                 <div className="flex flex-col items-center justify-center h-full">
                     <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
-                        <a href="/bubble" className="text-lg font-bold">
-                            Bubble
-                        </a>
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
-                        <a href="/setup-event" className="text-lg font-bold">
+                        <a href="/dashboard/setup-event" className="text-lg font-bold">
                             Event
                         </a>
                     </div>
                     <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
-                        <a href="/setting-beacon" className="text-lg font-bold">
+                        <a href="/dashboard/setting-beacon" className="text-lg font-bold">
                             Beacon
                         </a>
                     </div>
 
                     <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
-                        <a href="/corporate" className="text-lg font-bold">
+                        <a href="/dashboard/corporate" className="text-lg font-bold">
                             Corporate
                         </a>
                     </div>
