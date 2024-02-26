@@ -12,7 +12,7 @@ export default function SideNav() {
                     <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="bg-white rounded-full p-5 text-black absolute bottom-[6dvh] right-10"
+                        className="bg-orange-400 rounded-full p-5 text-black absolute bottom-2 right-5"
                         onClick={() => setIsOpen(350)}
                     >
                         Open
@@ -23,7 +23,7 @@ export default function SideNav() {
                 initial={{ x: isOpen ? -700 : 0 }}
                 animate={{ x: isOpen ? 0 : -700 }}
                 transition={{ duration: 0.5 }}
-                className="h-full w-full sm:w-[350px] bg-gray-800 text-white"
+                className={`h-full absolute sm:relative ${isOpen === 0 ? 'w-0 animate' :'w-full sm:w-[350px]'} bg-gray-800 text-white`}
             >
                 <div className="flex justify-center items-center h-16 bg-gray-900">
                     <h1 className="text-2xl font-bold">TU Library</h1>
@@ -36,12 +36,12 @@ export default function SideNav() {
                     </div>
                     <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
                         <a href="/setup-event" className="text-lg font-bold">
-                            Setup Event
+                            Event
                         </a>
                     </div>
                     <div className="flex flex-col items-center justify-center w-full h-16 border-b border-gray-700">
-                        <a href="/settings-beacon" className="text-lg font-bold">
-                            Settings Beacon
+                        <a href="/setting-beacon" className="text-lg font-bold">
+                            Beacon
                         </a>
                     </div>
 

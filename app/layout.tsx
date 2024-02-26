@@ -20,14 +20,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <meta name="description" />
                 <title>TU Library Management</title>
             </head>
-            <body className={inter.className}>
+            <body className={`w-screen h-screen ${inter.className}`}>
                 <header></header>
-                <main className={`w-screen h-[95dvh] bg-white text-black`}>
-                    <div className='h-full w-full sm:w-[350px]'>
+
+                <main className={`w-screen h-[95dvh] bg-white`}>
+                    <div className="absolute sm:relative h-[95dvh] w-screen sm:w-full flex">
                         <SideNav />
+                        <div className="w-full h-full">{children}</div>
                     </div>
-                    {children}
+                    
                 </main>
+
                 <footer className="h-[5dvh]">
                     <TailFooter />
                 </footer>
