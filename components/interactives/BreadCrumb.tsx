@@ -1,21 +1,25 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 type Props = {
-    children: React.ReactNode;
     className?: string;
 };
 
 export default function BreadCrumb(props: Props) {
-    const router = useRouter();
-    const path = router.asPath.split('/').filter((x) => x);
+    const pathName = usePathname();
+    const path = pathName.split('/').filter((x) => x !== '');
 
     return (
         <>
             <div className={`flex ${props.className}`}>
                 {path.map((x, i) => (
-                    <span key={i} className="text-gray-500">
-                        {x}
+                    <span key={i} className="flex items-center">
+                        <Link className='hover:underline underline-offset-2 animate' href={`/${path.slice(0, i + 1).join('/')
+                            }`}>
+                            {x}
+                        </Link>
+                        {i !== path.length - 1 && <div className="mx-1 w-3 h-[1px] bg-white" /> }
                     </span>
                 ))}
             </div>

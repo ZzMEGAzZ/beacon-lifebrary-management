@@ -11,7 +11,7 @@ export default function Span(props: Props) {
       <span
         className={`flex ${props.className} ${
           props.X && props.Y
-            ? "justify-around items-center"
+            ? "justify-between items-center"
             : props.X
             ? "justify-around items-start"
             : props.Y
