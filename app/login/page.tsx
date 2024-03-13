@@ -1,7 +1,6 @@
 import Middle from "@/components/layouts/Middle";
 import Span from "@/components/layouts/Span";
 import Image from 'next/image';
-impo
 
 export default function Login() {
     return (
