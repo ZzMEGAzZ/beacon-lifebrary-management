@@ -1,6 +1,5 @@
 'use client';
 import React, { use, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { usePathname } from 'next/navigation';
 import { useAppDispatch } from '@/redux/app/hooks';
