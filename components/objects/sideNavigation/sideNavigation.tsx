@@ -119,6 +119,7 @@ export default function SideNav() {
         currentPage !== navbar.page
             ? handleSideBar({ isOpen: 'open', page: currentPage as NavigationBar['page'] })
             : handleSideBar({ isOpen: navbar.isOpen, page: navbar.page });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentPage]);
 
     useEffect(() => {
