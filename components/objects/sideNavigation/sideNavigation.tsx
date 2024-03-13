@@ -53,14 +53,14 @@ export default function SideNav() {
                     handleSideBar({ isOpen: 'open', page: 'event' });
                 },
             },
-            'setup-event': {
-                label: 'Setup Event',
-                link: '/dashboard/event/setup-event',
-                isActive: navbar.page === 'setup-event',
-                onChangeItem: () => {
-                    handleSideBar({ isOpen: 'open', page: 'setup-event' });
-                },
-            },
+            // 'setup-event': {
+            //     label: 'Setup Event',
+            //     link: '/dashboard/event/setup-event',
+            //     isActive: navbar.page === 'setup-event',
+            //     onChangeItem: () => {
+            //         handleSideBar({ isOpen: 'open', page: 'setup-event' });
+            //     },
+            // },
         },
         Beacon: {
             beacon: {
@@ -71,14 +71,14 @@ export default function SideNav() {
                     handleSideBar({ isOpen: 'open', page: 'beacon' });
                 },
             },
-            'setting-beacon': {
-                label: 'Setting Beacon',
-                link: '/dashboard/beacon/setting-beacon',
-                isActive: navbar.page === 'setting-beacon',
-                onChangeItem: () => {
-                    handleSideBar({ isOpen: 'open', page: 'setting-beacon' });
-                },
-            },
+            // 'setting-beacon': {
+            //     label: 'Setting Beacon',
+            //     link: '/dashboard/beacon/setting-beacon',
+            //     isActive: navbar.page === 'setting-beacon',
+            //     onChangeItem: () => {
+            //         handleSideBar({ isOpen: 'open', page: 'setting-beacon' });
+            //     },
+            // },
         },
         Corporate: {
             corporate: {
@@ -89,14 +89,14 @@ export default function SideNav() {
                     handleSideBar({ isOpen: 'open', page: 'corporate' });
                 },
             },
-            'manage-corporate': {
-                label: 'Manage Corporate',
-                link: '/dashboard/corporate/manage-corporate',
-                isActive: navbar.page === 'manage-corporate',
-                onChangeItem: () => {
-                    handleSideBar({ isOpen: 'open', page: 'manage-corporate' });
-                },
-            },
+            // 'manage-corporate': {
+            //     label: 'Manage Corporate',
+            //     link: '/dashboard/corporate/manage-corporate',
+            //     isActive: navbar.page === 'manage-corporate',
+            //     onChangeItem: () => {
+            //         handleSideBar({ isOpen: 'open', page: 'manage-corporate' });
+            //     },
+            // },
         },
     }
 
@@ -131,33 +131,15 @@ export default function SideNav() {
 
     return (
         <>
-            {/* {navbar.isOpen === 'close' && (
-                <motion.div className="absolute w-full h-full">
-                    <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="bg-orange-400 rounded-full p-5 absolute bottom-2 right-5"
-                        onClick={() => {
-                            handleSideBar({ isOpen: 'forceOpen', page: navbar.page });
-                        }}
-                    >
-                        Open
-                    </motion.button>
-                </motion.div>
-            )} */}
-
             <div
-                // initial={{ x: -350 }}
-                // animate={{ x: navbar.isOpen !== 'close' ? 0 : -350 }}
-                // transition={{ duration: 0.5 }}
-                className={`${navbar.isOpen !== 'close' ? 'w-full h-full md:w-[350px] animate bg-white' : 'w-[50px] animate'} overflow-x-hidden overflow-y-auto absolute md:relative h-full box-border border-r border-r-Gray-light`}
+                className={`${navbar.isOpen !== 'close' ? 'w-full h-full md:w-[350px] animate bg-white' : `${deviceHandle === true ? 'w-0' : 'w-[50px]'} animate`} overflow-x-hidden overflow-y-auto absolute md:relative h-full box-border border-r border-r-Gray-light`}
             >
                 <>
-                    <Middle X Y className='w-full p-2'>
-                        <Image className={`${navbar.isOpen === 'close' && 'hidden' }`} src={Logo.src} alt="logo" width={75} height={75} />
+                    <Middle X Y className='w-full p-2 hidden md:flex'>
+                        <Image className={`${navbar.isOpen === 'close' && 'hidden'}`} src={Logo.src} alt="logo" width={75} height={75} />
 
                         <div className={`w-full flex flex-row justify-between items-center`}>
-                            <Span Y className={`${navbar.isOpen !== 'close' ? 'opacity-100' : 'opacity-0 hidden' } w-full px-2 text-black text-xs -translate-y-0.5 animate`}>
+                            <Span Y className={`${navbar.isOpen !== 'close' ? 'opacity-100' : 'opacity-0 hidden'}  w-full px-2 text-black text-xs -translate-y-0.5 animate`}>
                                 <span className='text-md font-semibold'>
                                     TU Library
                                 </span>
@@ -171,7 +153,7 @@ export default function SideNav() {
                             </button>
                         </div>
                     </Middle>
-                    <div className={`${navbar.isOpen !== 'close' ? 'opacity-100' : 'opacity-0 hidden md:transition-all duration-300 md:duration-100'} flex flex-col w-full my-2`}>
+                    <div className={`${navbar.isOpen !== 'close' ? 'opacity-100' : 'opacity-0 hidden md:transition-all duration-300 md:duration-100'} flex flex-col w-full my-2 pt-16 md:pt-0`}>
                         <Accordion
                             title={SidebarCategory({
                                 icon: <HomeIcon className={``} color={(Object.keys(page.Dashboard).filter((key) => page.Dashboard[key as keyof typeof page.Dashboard])).includes(currentPage) ? '#B42935' : undefined} />,

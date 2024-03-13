@@ -23,7 +23,7 @@ export default function Accordion(props: Props) {
         <div className={`w-full ${props.className}`}>
             <div className="flex justify-between items-center w-full cursor-pointer" onClick={props.onClick}>
                 <div className=""> {props.title} </div>
-                <div onClick={props.onClick} className={`mr-4 cursor-pointer ${props.isOpen ? 'transform rotate-180' : ''} animate`}>
+                <div onClick={props.onClick} className={`mr-4 cursor-pointer ${props.isOpen ? 'transform rotate-0' : 'transform rotate-90'} animate`}>
                     <ArrowUp className="w-4 h-4" />
                 </div>
             </div>
