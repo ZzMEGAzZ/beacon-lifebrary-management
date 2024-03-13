@@ -1,9 +1,9 @@
 import {get,post,postForm,deleteRequest,put} from '@/controller/api'
 import {parseJson} from '@/utils/parseJson'
-import { addUser,deleteUser } from '@/models/types/dto/userDto'
+import * as UserDto from '@/models/types/dto/userDto'
 
 // post
-export async function postAddUser(params: addUser) {
+export async function postAddUser(params: UserDto.addUser) {
 
     try {
         const response:any = await postForm(`add_user`, params,)
@@ -19,7 +19,7 @@ export async function postAddUser(params: addUser) {
 // get
 
 // delete
-export async function deleteUser(params: deleteUser) {
+export async function deleteUser(params: UserDto.deleteUser) {
 
     try {
         const response:any = await deleteRequest(`delete_user`, params)

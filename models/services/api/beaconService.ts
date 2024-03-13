@@ -1,9 +1,8 @@
 import {get,post,postForm,deleteRequest,put} from '@/controller/api'
 import {parseJson} from '@/utils/parseJson'
-import { addBeacon,updateBeaconName,updateBeaconPicture,addBeaconToEvent,removeBeaconFromEvent,updateBeaconLocation,deleteBeacon } from '@/models/types/dto/beaconDto'
-
+import * as BeaconDto from '@/models/types/dto/beaconDto'
 // post
-export async function postAddBeacon(params: addBeacon) {
+export async function postAddBeacon(params: BeaconDto.addBeacon) {
 
     try {
         const response:any = await postForm(`add_beacon`, params,)
@@ -14,7 +13,7 @@ export async function postAddBeacon(params: addBeacon) {
     }
 }
 
-export async function postUpdateBeaconName(params: updateBeaconName) {
+export async function postUpdateBeaconName(params: BeaconDto.updateBeaconName) {
 
     try {
         const response:any = await post(`update_beacon_name`, params)
@@ -25,7 +24,7 @@ export async function postUpdateBeaconName(params: updateBeaconName) {
     }
 }
 
-export async function postUpdateBeaconPicture(params: updateBeaconPicture) {
+export async function postUpdateBeaconPicture(params: BeaconDto.updateBeaconPicture) {
 
     try {
         const response:any = await postForm(`update_beacon_pic`, params)
@@ -36,7 +35,7 @@ export async function postUpdateBeaconPicture(params: updateBeaconPicture) {
     }
 }
 
-export async function postAddBeaconToEvent(params: addBeaconToEvent) {
+export async function postAddBeaconToEvent(params: BeaconDto.addBeaconToEvent) {
 
     try {
         const response:any = await post(`add_beacon_to_event`, params)
@@ -47,7 +46,7 @@ export async function postAddBeaconToEvent(params: addBeaconToEvent) {
     }
 }
 
-export async function postRemoveBeaconFromEvent(params: removeBeaconFromEvent) {
+export async function postRemoveBeaconFromEvent(params: BeaconDto.removeBeaconFromEvent) {
 
     try {
         const response:any = await post(`remove_beacon_from_event`, params)
@@ -58,7 +57,7 @@ export async function postRemoveBeaconFromEvent(params: removeBeaconFromEvent) {
     }
 }
 
-export async function postUpdateBeaconLocation(params: updateBeaconLocation) {
+export async function postUpdateBeaconLocation(params: BeaconDto.updateBeaconLocation) {
 
     try {
         const response:any = await post(`update_location_beacon_in_event`, params)
@@ -76,7 +75,7 @@ export async function postUpdateBeaconLocation(params: updateBeaconLocation) {
 // get
 
 // delete
-export async function deleteDeleteBeacon(params: deleteBeacon) {
+export async function deleteDeleteBeacon(params: BeaconDto.deleteBeacon) {
 
     try {
         const response:any = await deleteRequest(`delete_beacon`, params)

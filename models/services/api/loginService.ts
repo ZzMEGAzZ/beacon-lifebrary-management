@@ -1,9 +1,9 @@
 import {get,post,postForm,deleteRequest,put} from '@/controller/api'
 import {parseJson} from '@/utils/parseJson'
-import { login,refreshToken,resetPassword } from '@/models/types/dto/loginDto'
+import * as LoginDto from '@/models/types/dto/loginDto'
 
 // post
-export async function postLogin(params: login) {
+export async function postLogin(params: LoginDto.login) {
 
     try {
         const response:any = await post(`login`, params)
@@ -14,7 +14,7 @@ export async function postLogin(params: login) {
     }
 }
 
-export async function postRefreshToken(params: refreshToken) {
+export async function postRefreshToken(params: LoginDto.refreshToken) {
 
     try {
         const response:any = await post(`refresh_token`, params)
@@ -25,7 +25,7 @@ export async function postRefreshToken(params: refreshToken) {
     }
 }
 
-export async function postResetPassword(params: resetPassword) {
+export async function postResetPassword(params: LoginDto.resetPassword) {
 
     try {
         const response:any = await post(`reset_password`, params)
