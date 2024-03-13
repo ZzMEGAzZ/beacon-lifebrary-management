@@ -1,7 +1,7 @@
 'use client';
 import { Provider } from 'react-redux';
 import '../../styles/globals.css';
-import SideNav from '@/components/objects/sideNavigation/SideNavigation';
+import SideNav from '../../components/objects/sideNavigation/SideNavigation';
 import { store } from '@/redux/app/store';
 import Header from '@/components/objects/header/Header';
 
